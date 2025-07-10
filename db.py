@@ -60,6 +60,9 @@ def load_dataframe(table):
 df_aggregated_insurance = load_dataframe("aggregated_insurance")
 df_aggregated_transaction = load_dataframe("aggregated_transaction")
 df_aggregated_user = load_dataframe("aggregated_user")
+
+df_aggregated_user.rename(columns={"count": "user_count", "percentage": "user_percentage"}, inplace=True)
+
 df_map_insurance = load_dataframe("map_insurance")
 df_map_insurance.rename(columns={"name": "district"}, inplace=True)
 df_map_transaction = load_dataframe("map_transaction")
